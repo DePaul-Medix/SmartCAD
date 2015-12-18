@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Patient Image Query</title>
+    <style>
+      #btnSearch {
+        background-color: transparent;
+        border: none;
+      }
+      .searchIcon {
+        height: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="text-align: center;">Search: <input value="Show me the top 5 patients with the highest predicted malignancy"
+        size="150"
+        name="txtSearch"
+        type="text">
+      <img class="searchIcon" id="imgSearchByVoice" alt="Search by voice" src="images/Microphone_Icon_clip_art.svg">
+      <img class="searchIcon" id="imgSearchByImage" alt="Search by image" src="images/camera.svg">
+      <button formmethod="get" type="button" value="Search" name="btnSearch" id="btnSearch"><img class="searchIcon" id="imgSearchByVoice" alt="Search" src="images/Magnifying_glass_icon.svg"></button></p>
+    <hr style="width: 50%; height: 2px; color: black; margin-left: auto; margin-right: auto;">
+    <p>(Debug mode) Generated Faux-SQL query from NLU query:</p>
+    <p><code>SELECT p.*, AVERAGE(c.malignancy) FROM patients p INNER JOIN
+        Characteristics c ON c.XmlStudyNode == p.XmlStudyNode AND
+        c.StudyInstanceUID == p.StudyInstanceUID AND c.SeriesInstanceUID ==
+        p.SeriesInstanceUID AND c.FileNode == p.FileNode GROUP BY p.* ORDER BY
+        AVERAGE(c.malignancy) DESC;</code></p>
+    <p><code></code></p>
+    <hr style="width: 50%; height: 1px; color: black; margin-left: auto; margin-right: auto;">
+    <table style="width: 100%;" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 543.333px;"><img alt="LIDC-IDRI-0001" src="file:///Users/estory/Documents/syncable/School/DePaul/research/StoryEvan/edge_superimposition/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/000003-allReviewers-noConvexHull.png"></td>
+          <td style="width: 965.667px;">
+            <p>Characteristics (radiologist average):</p>
+            <table style="width: 80%;" border="1">
+              <!--StartFragment--> <colgroup><col style="width:65pt" span="2" width="87">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>subtlety</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>internalStructure</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>calcification</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>sphericity</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>margin</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>lobulation</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>spiculation</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>texture</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>malignancy</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td># radiologist reviews</td>
+                  <td>4</td>
+                </tr>
+                <!--EndFragment-->
+              </tbody>
+            </table>
+            <p>Metadata (DICOM):</p>
+            <table style="width: 80%;" border="1">
+              <tbody>
+                <tr>
+                  <td>PatientID (XmlStudyNode)</td>
+                  <td>LIDC-IDRI-0001</td>
+                </tr>
+                <tr>
+                  <td>StudyInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178</td>
+                </tr>
+                <tr>
+                  <td>SeriesInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192</td>
+                </tr>
+                <tr>
+                  <td>FileNode</td>
+                  <td>69</td>
+                </tr>
+                <tr>
+                  <td>imageSOP_UID<br>
+                  </td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.110383487652933113465768208719<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AcquisitionDateTime<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AccessionNumber<br>
+                  </td>
+                  <td>2819497684894126<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ContrastBolusAgent<br>
+                  </td>
+                  <td>IV<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BodyPartExamined<br>
+                  </td>
+                  <td>CHEST<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ScanOptions<br>
+                  </td>
+                  <td>HELICAL MODE<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SliceThickness<br>
+                  </td>
+                  <td>2.5<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PatientPosition<br>
+                  </td>
+                  <td>FFS<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PerformedProcedureStepStartDate<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><br>
+                  </td>
+                  <td><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width: 100%;" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 543.333px;"><img alt="LIDC-IDRI-0001" src="file:///Users/estory/Documents/syncable/School/DePaul/research/StoryEvan/edge_superimposition/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/000003-allReviewers-noConvexHull.png"></td>
+          <td style="width: 965.667px;">
+            <p>Characteristics (radiologist average):</p>
+            <table style="width: 80%;" border="1">
+              <!--StartFragment--> <colgroup><col style="width:65pt" span="2" width="87">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>subtlety</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>internalStructure</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>calcification</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>sphericity</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>margin</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>lobulation</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>spiculation</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>texture</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>malignancy</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td># radiologist reviews</td>
+                  <td>4</td>
+                </tr>
+                <!--EndFragment-->
+              </tbody>
+            </table>
+            <p>Metadata (DICOM):</p>
+            <table style="width: 80%;" border="1">
+              <tbody>
+                <tr>
+                  <td>PatientID (XmlStudyNode)</td>
+                  <td>LIDC-IDRI-0001</td>
+                </tr>
+                <tr>
+                  <td>StudyInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178</td>
+                </tr>
+                <tr>
+                  <td>SeriesInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192</td>
+                </tr>
+                <tr>
+                  <td>FileNode</td>
+                  <td>69</td>
+                </tr>
+                <tr>
+                  <td>imageSOP_UID<br>
+                  </td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.110383487652933113465768208719<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AcquisitionDateTime<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AccessionNumber<br>
+                  </td>
+                  <td>2819497684894126<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ContrastBolusAgent<br>
+                  </td>
+                  <td>IV<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BodyPartExamined<br>
+                  </td>
+                  <td>CHEST<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ScanOptions<br>
+                  </td>
+                  <td>HELICAL MODE<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SliceThickness<br>
+                  </td>
+                  <td>2.5<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PatientPosition<br>
+                  </td>
+                  <td>FFS<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PerformedProcedureStepStartDate<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><br>
+                  </td>
+                  <td><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width: 100%;" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 543.333px;"><img alt="LIDC-IDRI-0001" src="file:///Users/estory/Documents/syncable/School/DePaul/research/StoryEvan/edge_superimposition/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/000003-allReviewers-noConvexHull.png"></td>
+          <td style="width: 965.667px;">
+            <p>Characteristics (radiologist average):</p>
+            <table style="width: 80%;" border="1">
+              <!--StartFragment--> <colgroup><col style="width:65pt" span="2" width="87">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>subtlety</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>internalStructure</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>calcification</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>sphericity</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>margin</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>lobulation</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>spiculation</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>texture</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>malignancy</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td># radiologist reviews</td>
+                  <td>4</td>
+                </tr>
+                <!--EndFragment-->
+              </tbody>
+            </table>
+            <p>Metadata (DICOM):</p>
+            <table style="width: 80%;" border="1">
+              <tbody>
+                <tr>
+                  <td>PatientID (XmlStudyNode)</td>
+                  <td>LIDC-IDRI-0001</td>
+                </tr>
+                <tr>
+                  <td>StudyInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178</td>
+                </tr>
+                <tr>
+                  <td>SeriesInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192</td>
+                </tr>
+                <tr>
+                  <td>FileNode</td>
+                  <td>69</td>
+                </tr>
+                <tr>
+                  <td>imageSOP_UID<br>
+                  </td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.110383487652933113465768208719<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AcquisitionDateTime<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AccessionNumber<br>
+                  </td>
+                  <td>2819497684894126<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ContrastBolusAgent<br>
+                  </td>
+                  <td>IV<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BodyPartExamined<br>
+                  </td>
+                  <td>CHEST<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ScanOptions<br>
+                  </td>
+                  <td>HELICAL MODE<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SliceThickness<br>
+                  </td>
+                  <td>2.5<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PatientPosition<br>
+                  </td>
+                  <td>FFS<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PerformedProcedureStepStartDate<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><br>
+                  </td>
+                  <td><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width: 100%;" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 543.333px;"><img alt="LIDC-IDRI-0001" src="file:///Users/estory/Documents/syncable/School/DePaul/research/StoryEvan/edge_superimposition/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/000003-allReviewers-noConvexHull.png"></td>
+          <td style="width: 965.667px;">
+            <p>Characteristics (radiologist average):</p>
+            <table style="width: 80%;" border="1">
+              <!--StartFragment--> <colgroup><col style="width:65pt" span="2" width="87">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>subtlety</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>internalStructure</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>calcification</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>sphericity</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>margin</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>lobulation</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>spiculation</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>texture</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>malignancy</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td># radiologist reviews</td>
+                  <td>4</td>
+                </tr>
+                <!--EndFragment-->
+              </tbody>
+            </table>
+            <p>Metadata (DICOM):</p>
+            <table style="width: 80%;" border="1">
+              <tbody>
+                <tr>
+                  <td>PatientID (XmlStudyNode)</td>
+                  <td>LIDC-IDRI-0001</td>
+                </tr>
+                <tr>
+                  <td>StudyInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178</td>
+                </tr>
+                <tr>
+                  <td>SeriesInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192</td>
+                </tr>
+                <tr>
+                  <td>FileNode</td>
+                  <td>69</td>
+                </tr>
+                <tr>
+                  <td>imageSOP_UID<br>
+                  </td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.110383487652933113465768208719<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AcquisitionDateTime<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AccessionNumber<br>
+                  </td>
+                  <td>2819497684894126<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ContrastBolusAgent<br>
+                  </td>
+                  <td>IV<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BodyPartExamined<br>
+                  </td>
+                  <td>CHEST<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ScanOptions<br>
+                  </td>
+                  <td>HELICAL MODE<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SliceThickness<br>
+                  </td>
+                  <td>2.5<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PatientPosition<br>
+                  </td>
+                  <td>FFS<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PerformedProcedureStepStartDate<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><br>
+                  </td>
+                  <td><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width: 100%;" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 543.333px;"><img alt="LIDC-IDRI-0001" src="file:///Users/estory/Documents/syncable/School/DePaul/research/StoryEvan/edge_superimposition/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/000003-allReviewers-noConvexHull.png"></td>
+          <td style="width: 965.667px;">
+            <p>Characteristics (radiologist average):</p>
+            <table style="width: 80%;" border="1">
+              <!--StartFragment--> <colgroup><col style="width:65pt" span="2" width="87">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>subtlety</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>internalStructure</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>calcification</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>sphericity</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>margin</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>lobulation</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>spiculation</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>texture</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>malignancy</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td># radiologist reviews</td>
+                  <td>4</td>
+                </tr>
+                <!--EndFragment-->
+              </tbody>
+            </table>
+            <p>Metadata (DICOM):</p>
+            <table style="width: 80%;" border="1">
+              <tbody>
+                <tr>
+                  <td>PatientID (XmlStudyNode)</td>
+                  <td>LIDC-IDRI-0001</td>
+                </tr>
+                <tr>
+                  <td>StudyInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178</td>
+                </tr>
+                <tr>
+                  <td>SeriesInstanceUID</td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192</td>
+                </tr>
+                <tr>
+                  <td>FileNode</td>
+                  <td>69</td>
+                </tr>
+                <tr>
+                  <td>imageSOP_UID<br>
+                  </td>
+                  <td>1.3.6.1.4.1.14519.5.2.1.6279.6001.110383487652933113465768208719<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AcquisitionDateTime<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AccessionNumber<br>
+                  </td>
+                  <td>2819497684894126<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ContrastBolusAgent<br>
+                  </td>
+                  <td>IV<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BodyPartExamined<br>
+                  </td>
+                  <td>CHEST<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ScanOptions<br>
+                  </td>
+                  <td>HELICAL MODE<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SliceThickness<br>
+                  </td>
+                  <td>2.5<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PatientPosition<br>
+                  </td>
+                  <td>FFS<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PerformedProcedureStepStartDate<br>
+                  </td>
+                  <td>20000101<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td><br>
+                  </td>
+                  <td><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
