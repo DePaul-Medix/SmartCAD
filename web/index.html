@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style>
+			h1{
+				margin-left: 20%;
+				margin-right: 20%;
+				margin-top: 20%;
+				text-align: center;
+				color: #FFFFFF;
+			}
+			#searchbox{
+				margin-left: 20%;
+				width: 60%;
+			}
+			body{
+				background-color: #333333;
+			}
+			#search{
+				height: 100px;
+			}
+			button{
+				background-color: #EEC900;
+			}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	</body class="container-fluid">
+		<div>
+			<h1>SmartCAD</h1>
+			<div id="search">
+				<input id="searchbox" type="text" value=" Please enter your search term"></input>
+				<a href="query.html"><button><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></a>
+				<a href="query.html"><button><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button></a>
+				<a href="query.html"><button><span><i class="fa fa-microphone"></i></span></button></a>			
+			</div>
+		</div>
+		
+		<!--Scripts-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> 
+		<script>
+			$(document).ready(function(){
+				$('#searchbox').on('focus',function(){
+					$(this).val('');
+				});
+			});
+		</script>
+	</body>
+</html>
