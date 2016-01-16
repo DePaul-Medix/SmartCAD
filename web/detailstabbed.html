@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <link type="text/css" rel="stylesheet" href="fullPage/jquery.fullPage.css"/>
         <style>
-             
 			.slide{
                 background-color: #333333;
             }
@@ -17,6 +16,7 @@
             
             .tabular{
                 height: 450px;
+                overflow: scroll;
             }
             
             ul{
@@ -30,7 +30,7 @@
                 <div class="slide">
                     <div id="image" class="col-md-3 col-md-offset-1">
                         <img src="http://www.imagingpathways.health.wa.gov.au/images/pnodule/car.jpg"/>
-                    </div>
+                    </div>                    
                     <div class="col-md-7 tabular">
                         <ul>
                             <li><a href="#tabs-1">Characteristics</a></li>
@@ -38,6 +38,26 @@
                         </ul>
                         <div id="tabs-1">
                             <ul>
+								<li>Subtlety: {{info[1].characteristics['subtlety']}}</li>
+								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+								<li>Margin: {{info[1].characteristics['margin']}}</li>
+								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+								<li>Texture: {{info[1].characteristics['texture']}}</li>
+								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+								<li>Margin: {{info[1].characteristics['margin']}}</li>
+								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+								<li>Texture: {{info[1].characteristics['texture']}}</li>
+								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
 								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
 								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
 								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
@@ -48,6 +68,16 @@
 								<li>Texture: {{info[1].characteristics['texture']}}</li>
 								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
 								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+								<li>Margin: {{info[1].characteristics['margin']}}</li>
+								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+								<li>Texture: {{info[1].characteristics['texture']}}</li>
+								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>                                                                
                             </ul>                                            
                         </div>
                         <div id="tabs-2">
@@ -67,7 +97,10 @@
 								<li>Performed Procedure Step Start Date: {{info[1].metadata['PerformedProcedureStepStartDate']}}</li>
 							</ul>
                         </div>
-                    </div>   
+                    </div>
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid"></div>
+                    </nav>   
                 </div>
                 <div class="slide">
                     <div id="image" class="col-md-3 col-md-offset-1">
@@ -90,6 +123,36 @@
 								<li>Texture: {{info[1].characteristics['texture']}}</li>
 								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
 								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+								<li>Margin: {{info[1].characteristics['margin']}}</li>
+								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+								<li>Texture: {{info[1].characteristics['texture']}}</li>
+								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+								<li>Margin: {{info[1].characteristics['margin']}}</li>
+								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+								<li>Texture: {{info[1].characteristics['texture']}}</li>
+								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+								<li>Margin: {{info[1].characteristics['margin']}}</li>
+								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+								<li>Texture: {{info[1].characteristics['texture']}}</li>
+								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>                                                                
                             </ul>                                            
                         </div>
                         <div id="tabs-2">
@@ -118,12 +181,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="fullPage/jquery.fullPage.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function(){
                 $('#fullpage').fullpage();
                 $('.tabular').tabs();
-            });
-            
+                
+        
+            });  
         </script>	
 	</body>
 </html>
