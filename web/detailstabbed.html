@@ -17,10 +17,15 @@
             .tabular{
                 height: 450px;
                 overflow: scroll;
+                background: #333333;
             }
-            
+                        
             ul{
                 list-style: none;   
+            }
+            
+            .tabcontent{
+                color: #CCCCCC;
             }
 		</style>
 	</head>
@@ -28,151 +33,178 @@
         <div id="fullpage">
             <div class="section">
                 <div class="slide">
-                    <div id="image" class="col-md-3 col-md-offset-1">
-                        <img src="http://www.imagingpathways.health.wa.gov.au/images/pnodule/car.jpg"/>
-                    </div>                    
-                    <div class="col-md-7 tabular">
-                        <ul>
-                            <li><a href="#tabs-1">Characteristics</a></li>
-                            <li><a href="#tabs-2">Metadata</a></li>
-                        </ul>
-                        <div id="tabs-1">
-                            <ul>
-								<li>Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
-                                <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
-								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
-								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>                                                                
-                            </ul>                                            
+                        <div id="image" class="col-md-3 col-md-offset-1">
+                            <img src="http://www.imagingpathways.health.wa.gov.au/images/pnodule/car.jpg"/>
                         </div>
-                        <div id="tabs-2">
-                            <ul>
-                                <li>PatientID (XmlStudyNode): {{info[1].metadata['PatientID(XmlStudyNode)']}}</li>
-								<li>Study Instance UID: {{info[1].metadata['StudyInstanceUID']}}</li>
-								<li>Series Instance UID: {{info[1].metadata['SeriesInstanceUID']}}</li>
-								<li>FileNode: {{info[1].metadata['FileNode']}}</li>
-								<li>imageSOP_UID: {{info[1].metadata['imageSOP_UID']}}</li>
-								<li>Acquisition Date/Time: {{info[1].metadata['AcquisitionDateTime']}}</li>
-								<li>Accession Number: {{info[1].metadata['AccessionNumber']}}</li>
-								<li>Contrast Bolus Agent: {{info[1].metadata['ContrastBolusAgent']}}</li>
-								<li>Body Part Examined: {{info[1].metadata['BodyPartExamined']}}</li>
-								<li>Scan Options: {{info[1].metadata['ScanOptions']}}</li>
-								<li>Slice Thickness: {{info[1].metadata['SliceThickness']}}</li>
-								<li>Patient Position: {{info[1].metadata['PatientPosition']}}</li>
-								<li>Performed Procedure Step Start Date: {{info[1].metadata['PerformedProcedureStepStartDate']}}</li>
-							</ul>
+                        <div class="col-md-6 col-md-offset-1 tabular">
+                            <div class="tablist">
+                                <ul>
+                                    <li><a href="#tabs-1">Characteristics</a></li>
+                                    <li><a href="#tabs-2">Metadata</a></li>
+                                    <li><a href="#tabs-3">Comments</a></li>
+                                </ul>                                    
+                            </div>                        
+                            <div id="tabs-1" class="tabcontent">
+                                <ul>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>                                                                
+                                </ul>                                            
+                            </div>
+                            <div id="tabs-2" class="tabcontent">
+                                <ul>
+                                    <li>PatientID (XmlStudyNode): {{info[1].metadata['PatientID(XmlStudyNode)']}}</li>
+                                    <li>Study Instance UID: {{info[1].metadata['StudyInstanceUID']}}</li>
+                                    <li>Series Instance UID: {{info[1].metadata['SeriesInstanceUID']}}</li>
+                                    <li>FileNode: {{info[1].metadata['FileNode']}}</li>
+                                    <li>imageSOP_UID: {{info[1].metadata['imageSOP_UID']}}</li>
+                                    <li>Acquisition Date/Time: {{info[1].metadata['AcquisitionDateTime']}}</li>
+                                    <li>Accession Number: {{info[1].metadata['AccessionNumber']}}</li>
+                                    <li>Contrast Bolus Agent: {{info[1].metadata['ContrastBolusAgent']}}</li>
+                                    <li>Body Part Examined: {{info[1].metadata['BodyPartExamined']}}</li>
+                                    <li>Scan Options: {{info[1].metadata['ScanOptions']}}</li>
+                                    <li>Slice Thickness: {{info[1].metadata['SliceThickness']}}</li>
+                                    <li>Patient Position: {{info[1].metadata['PatientPosition']}}</li>
+                                    <li>Performed Procedure Step Start Date: {{info[1].metadata['PerformedProcedureStepStartDate']}}</li>
+                                </ul>
+                            </div>
+                            <div id="tabs-3" class="tabcontent">
+                                <div class="comment">
+                                    <h4>Dr. Jekyll</h4>
+                                    <h5>December 8, 2016</h5>
+                                    <p>This patient...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                                    
+                                </div>              
+                                <div class="comment">
+                                    <h4>Mr. Hyde</h4>
+                                    <h5>January 15, 2016</h5>
+                                    <p>This patient...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                                    
+                                </div>                            
+                            </div>                        
                         </div>
-                    </div>
-                    <nav class="navbar navbar-default">
-                        <div class="container-fluid"></div>
-                    </nav>   
                 </div>
                 <div class="slide">
-                    <div id="image" class="col-md-3 col-md-offset-1">
-                        <img src="http://www.imagingpathways.health.wa.gov.au/images/pnodule/car.jpg"/>
-                    </div>
-                    <div class="col-md-7 tabular">
-                        <ul>
-                            <li><a href="#tabs-1">Characteristics</a></li>
-                            <li><a href="#tabs-2">Metadata</a></li>
-                        </ul>
-                        <div id="tabs-1">
-                            <ul>
-								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
-                                <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
-								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
-								<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
-								<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
-								<li>Calcification: {{info[1].characteristics['calcification']}}</li>
-								<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
-								<li>Margin: {{info[1].characteristics['margin']}}</li>
-								<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
-								<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
-								<li>Texture: {{info[1].characteristics['texture']}}</li>
-								<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
-								<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>                                                                
-                            </ul>                                            
+                        <div id="image" class="col-md-3 col-md-offset-1">
+                            <img src="http://www.imagingpathways.health.wa.gov.au/images/pnodule/car.jpg"/>
                         </div>
-                        <div id="tabs-2">
-                            <ul>
-                                <li>PatientID (XmlStudyNode): {{info[1].metadata['PatientID(XmlStudyNode)']}}</li>
-								<li>Study Instance UID: {{info[1].metadata['StudyInstanceUID']}}</li>
-								<li>Series Instance UID: {{info[1].metadata['SeriesInstanceUID']}}</li>
-								<li>FileNode: {{info[1].metadata['FileNode']}}</li>
-								<li>imageSOP_UID: {{info[1].metadata['imageSOP_UID']}}</li>
-								<li>Acquisition Date/Time: {{info[1].metadata['AcquisitionDateTime']}}</li>
-								<li>Accession Number: {{info[1].metadata['AccessionNumber']}}</li>
-								<li>Contrast Bolus Agent: {{info[1].metadata['ContrastBolusAgent']}}</li>
-								<li>Body Part Examined: {{info[1].metadata['BodyPartExamined']}}</li>
-								<li>Scan Options: {{info[1].metadata['ScanOptions']}}</li>
-								<li>Slice Thickness: {{info[1].metadata['SliceThickness']}}</li>
-								<li>Patient Position: {{info[1].metadata['PatientPosition']}}</li>
-								<li>Performed Procedure Step Start Date: {{info[1].metadata['PerformedProcedureStepStartDate']}}</li>
-							</ul>
-                        </div>
-                    </div>   
+                        <div class="col-md-6 col-md-offset-1 tabular">
+                            <div class="tablist">
+                                <ul>
+                                    <li><a href="#tabs-1">Characteristics</a></li>
+                                    <li><a href="#tabs-2">Metadata</a></li>
+                                    <li><a href="#tabs-3">Comments</a></li>
+                                </ul>                                    
+                            </div>                        
+                            <div id="tabs-1" class="tabcontent">
+                                <ul>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+                                    <li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+                                    <li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+                                    <li>Calcification: {{info[1].characteristics['calcification']}}</li>
+                                    <li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+                                    <li>Margin: {{info[1].characteristics['margin']}}</li>
+                                    <li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+                                    <li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+                                    <li>Texture: {{info[1].characteristics['texture']}}</li>
+                                    <li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+                                    <li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>                                                                
+                                </ul>                                            
+                            </div>
+                            <div id="tabs-2" class="tabcontent">
+                                <ul>
+                                    <li>PatientID (XmlStudyNode): {{info[1].metadata['PatientID(XmlStudyNode)']}}</li>
+                                    <li>Study Instance UID: {{info[1].metadata['StudyInstanceUID']}}</li>
+                                    <li>Series Instance UID: {{info[1].metadata['SeriesInstanceUID']}}</li>
+                                    <li>FileNode: {{info[1].metadata['FileNode']}}</li>
+                                    <li>imageSOP_UID: {{info[1].metadata['imageSOP_UID']}}</li>
+                                    <li>Acquisition Date/Time: {{info[1].metadata['AcquisitionDateTime']}}</li>
+                                    <li>Accession Number: {{info[1].metadata['AccessionNumber']}}</li>
+                                    <li>Contrast Bolus Agent: {{info[1].metadata['ContrastBolusAgent']}}</li>
+                                    <li>Body Part Examined: {{info[1].metadata['BodyPartExamined']}}</li>
+                                    <li>Scan Options: {{info[1].metadata['ScanOptions']}}</li>
+                                    <li>Slice Thickness: {{info[1].metadata['SliceThickness']}}</li>
+                                    <li>Patient Position: {{info[1].metadata['PatientPosition']}}</li>
+                                    <li>Performed Procedure Step Start Date: {{info[1].metadata['PerformedProcedureStepStartDate']}}</li>
+                                </ul>
+                            </div>
+                            <div id="tabs-3" class="tabcontent">
+                                <div class="comment">
+                                    <h4>Dr. Jekyll</h4>
+                                    <h5>December 8, 2016</h5>
+                                    <p>This patient...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                                    
+                                </div>              
+                                <div class="comment">
+                                    <h4>Mr. Hyde</h4>
+                                    <h5>January 15, 2016</h5>
+                                    <p>This patient...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                                    
+                                </div>                            
+                            </div>                        
+                        </div>                       
                 </div>
             </div>
         </div>
@@ -185,9 +217,7 @@
         <script>
             $(document).ready(function(){
                 $('#fullpage').fullpage();
-                $('.tabular').tabs();
-                
-        
+                $('.tabular').tabs();       
             });  
         </script>	
 	</body>
