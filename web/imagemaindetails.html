@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SMARTCAD</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <style>
+            body, .btn{
+                background: #333333;
+                color: #CCDD33;
+            }
+            
+            #content{
+                margin-top: 10px;
+            }
+            
+            canvas{
+                height: 100%;
+                width: 100%;    
+            }
+            img{
+                height: 0%;
+                width: 0%;
+            }
+            table{
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <h1>SmartCAD</h1>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <button type="button" class="btn btn-default btn-sm" aria-label="Undo">
+                    <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="false"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" aria-label="Redo">
+                    <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="false"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" aria-label="Zoom In">
+                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="false"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" aria-label="Zoom Out">
+                    <span class="glyphicon glyphicon-zoom-out" aria-hidden="false"></span>
+                </button>                                
+            </div>            
+        </div>
+        <div class="row" id="content">
+            <div class="col-md-7">
+                <canvas id="canvas" height="100%" width="100%"></canvas>
+                <img style="visibility:hidden;" id="slide" src="http://www.proprofs.com/quiz-school/upload/yuiupload/116328198.jpg"/>
+            </div>
+                <div class="col-md-4 table-responsive">
+                    <table class="table table-condensed">
+                        <h4>Characteritics</h4>
+                        <thead>
+                            <td>Attribute</td>
+                            <td>Value</td>    
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Subtlety</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Internal Structure</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Calcification</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Margin</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Lobulation</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Spiculation</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Texture</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Malignancy</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td># Radiologist Reviews</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                        </tbody>                        
+                    </table>                
+                </div>
+                <div class="col-md-4 table-responsive">
+                    <table class="table table-condensed">
+                        <h4>Metadata</h4>
+                        <thead>
+                            <td>Attribute</td>
+                            <td>Value</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PatientID (XmlStudyNode)</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Study Instance UID</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Series Instance UID</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>FileNode</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>imageSOP_UID</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Acquisition Date/Time</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Accession Number</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Contrast Bolus Agent</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Body Part Examined</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Scan Options</td>
+                                <td>Lorem Ipsum</td>
+                            </tr> 
+                            <tr>
+                                <td>Slice Thickness</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Patient Position</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Performed Procedure Step Start Date</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>                                                                        
+                        </tbody>
+                    </table>
+                </div>  
+        </div>
+        <script>
+            var c = document.getElementById("canvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("slide");
+            ctx.drawImage(img,0,0);
+        </script>
+    <body>
+</html>
