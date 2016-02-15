@@ -6,7 +6,7 @@
         <style>
             body, .btn{
                 background: #333333;
-                color: #CCDD33;
+                color: #EECC10;
             }
             
             #content{
@@ -165,10 +165,23 @@
                 </div>  
         </div>
         <script>
+            //This code draws the image in the canvas component//
+            /*
+                TODO: Make it such that it pulls in the image dynamically
+                from the result provided in the GET request 
+            */
             var c = document.getElementById("canvas");
             var ctx = c.getContext("2d");
             var img = document.getElementById("slide");
             ctx.drawImage(img,0,0);
+            /*
+                TODO: Draw a point on click as opposed to on page load
+            */           
+            ctx.beginPath();
+            ctx.arc(pageXOffset,pageYOffset,1,0,Math.PI*2,true);
+            ctx.closePath();
+            ctx.fillStyle = "red";
+            ctx.fill();
         </script>
     <body>
 </html>
