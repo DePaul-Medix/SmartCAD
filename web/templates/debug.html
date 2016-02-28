@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"/>
+        <style>
+            body{
+                background: #333333;
+                color: #CCCCCC;
+            }
+            table{
+                overflow: scroll;
+            }
+            label{
+                color:#CCCCCC;
+            }
+            td{
+                color: #333333;
+            }
+        </style>
+    </head>
+    <body class="container-fluid">
+        <h1>SMARTCAD ERROR LOG</h1>
+        <table id="errorlog" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Time Stamp</th><!--Time of Error-->
+                    <th>Error ID</th><!--Server Response-->
+                    <th>Query</th><!--Text Query and SQL-->
+                    <th>Input Type</th><!--Voice,Img,Text-->
+                </tr>
+            </thead>
+            <tbody id="content">
+                <tr>
+                    <td>20151104</td>
+                    <td>504</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Voice</td>
+                </tr>
+                <tr>
+                    <td>20160114</td>
+                    <td>401</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Image</td>
+                </tr>
+                <tr>
+                    <td>20151209</td>
+                    <td>400</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Text</td>
+                </tr>
+                <tr>
+                    <td>20151104</td>
+                    <td>504</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Voice</td>
+                </tr>
+                <tr>
+                    <td>20160114</td>
+                    <td>401</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Image</td>
+                </tr>
+                <tr>
+                    <td>20151209</td>
+                    <td>400</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Text</td>
+                </tr>
+                <tr>
+                    <td>20151104</td>
+                    <td>504</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Voice</td>
+                </tr>
+                <tr>
+                    <td>20160114</td>
+                    <td>401</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Image</td>
+                </tr>
+                <tr>
+                    <td>20151209</td>
+                    <td>400</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Text</td>
+                </tr>
+                <tr>
+                    <td>20151104</td>
+                    <td>504</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Voice</td>
+                </tr>
+                <tr>
+                    <td>20160114</td>
+                    <td>401</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Image</td>
+                </tr>
+                <tr>
+                    <td>20151209</td>
+                    <td>400</td>
+                    <td>
+                        Text: Shxn me Images of 5 yccccc</br>
+                        SQL: SELECT p.*, AVERAGE(c.malignancy) FROM patients
+                    </td>
+                    <td>Text</td>
+                </tr>                                                                                   
+            </tbody>
+        </table>
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#errorlog').DataTable();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="fullPage/jquery.fullPage.css"/>
+
+		<style>	
+			.slide{
+				background-color: #333333;
+			}			
+			ul{
+				list-style: none;
+			}
+			img{
+				height: 25%;
+			}
+			#main{
+				margin-left: 75px;
+				margin-right: 75px;
+			}
+			#details{
+				padding-left: 15px;
+				width: 95%;
+				color: #DDDDDD;
+			}
+		</style>
+	</head>
+	<body class="container-fluid">
+		<div id="fullpage"  ng-controller="mainController">
+			<div class="section">
+				<div class="slide">
+					<div>
+						<table id="main">
+							<tbody>
+								<tr>
+									<td class="col-md-4">
+										<img ng-src="{{info[0].metadata['img']}}"/>
+									</td>
+									<td>
+										<table id="details">
+											<tbody>
+												<tr><td><strong>Characteristics (radiologist average):</strong></td></tr>
+												<tr>
+													<td>
+														<ul>
+															<li>Subtlety: {{info[0].characteristics['subtlety']}}</li>
+															<li>Internal Structure: {{info[0].characteristics['internalStructure']}}</li>
+															<li>Calcification: {{info[0].characteristics['calcification']}}</li>
+															<li>Sphericity: {{info[0].characteristics['sphericity']}}</li>
+															<li>Margin: {{info[0].characteristics['margin']}}</li>
+															<li>Lobulation: {{info[0].characteristics['lobulation']}}</li>
+															<li>Spiculation: {{info[0].characteristics['spiculation']}}</li>
+															<li>Texture: {{info[0].characteristics['texture']}}</li>
+															<li>Malignancy: {{info[0].characteristics['malignancy']}}</li>
+															<li># Radiologist Reviews: {{info[0].characteristics['#radiologistreviews']}}</li>
+														</ul>
+													</td>
+													<tr></tr>
+													<tr><td><strong>Metadata (DICOM):</strong></td></tr>
+													<tr>
+														<td>
+															<ul>
+																<li>PatientID (XmlStudyNode): {{info[0].metadata['PatientID(XmlStudyNode)']}}</li>
+																<li>Study Instance UID: {{info[0].metadata['StudyInstanceUID']}}</li>
+																<li>Series Instance UID: {{info[0].metadata['SeriesInstanceUID']}}</li>
+																<li>FileNode: {{info[0].metadata['FileNode']}}</li>
+																<li>imageSOP_UID: {{info[0].metadata['imageSOP_UID']}}</li>
+																<li>Acquisition Date/Time: {{info[0].metadata['AcquisitionDateTime']}}</li>
+																<li>Accession Number: {{info[0].metadata['AccessionNumber']}}</li>
+																<li>Contrast Bolus Agent: {{info[0].metadata['ContrastBolusAgent']}}</li>
+																<li>Body Part Examined: {{info[0].metadata['BodyPartExamined']}}</li>
+																<li>Scan Options: {{info[0].metadata['ScanOptions']}}</li>
+																<li>Slice Thickness: {{info[0].metadata['SliceThickness']}}</li>
+																<li>Patient Position: {{info[0].metadata['PatientPosition']}}</li>
+																<li>Performed Procedure Step Start Date: {{info[0].metadata['PerformedProcedureStepStartDate']}}</li>
+															</ul>
+														</td>
+													</tr>
+												</tr>											
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="slide">
+					<div>
+						<table id="main">
+							<tbody>
+								<tr>
+									<td class="col-md-4">
+										<img ng-src="{{info[1].metadata['img']}}"/>
+									</td>
+									<td>
+										<table id="details">
+											<tbody>
+												<tr><td><strong>Characteristics (radiologist average):</strong></td></tr>
+												<tr>
+													<td>
+														<ul>
+															<li> Subtlety: {{info[1].characteristics['subtlety']}}</li>
+															<li>Internal Structure: {{info[1].characteristics['internalStructure']}}</li>
+															<li>Calcification: {{info[1].characteristics['calcification']}}</li>
+															<li>Sphericity: {{info[1].characteristics['sphericity']}}</li>
+															<li>Margin: {{info[1].characteristics['margin']}}</li>
+															<li>Lobulation: {{info[1].characteristics['lobulation']}}</li>
+															<li>Spiculation: {{info[1].characteristics['spiculation']}}</li>
+															<li>Texture: {{info[1].characteristics['texture']}}</li>
+															<li>Malignancy: {{info[1].characteristics['malignancy']}}</li>
+															<li># Radiologist Reviews: {{info[1].characteristics['#radiologistreviews']}}</li>
+														</ul>
+													</td>
+													<tr></tr>
+													<tr><td><strong>Metadata (DICOM):</strong></td></tr>
+													<tr>
+														<td>
+															<ul>
+																<li>PatientID (XmlStudyNode): {{info[1].metadata['PatientID(XmlStudyNode)']}}</li>
+																<li>Study Instance UID: {{info[1].metadata['StudyInstanceUID']}}</li>
+																<li>Series Instance UID: {{info[1].metadata['SeriesInstanceUID']}}</li>
+																<li>FileNode: {{info[1].metadata['FileNode']}}</li>
+																<li>imageSOP_UID: {{info[1].metadata['imageSOP_UID']}}</li>
+																<li>Acquisition Date/Time: {{info[1].metadata['AcquisitionDateTime']}}</li>
+																<li>Accession Number: {{info[1].metadata['AccessionNumber']}}</li>
+																<li>Contrast Bolus Agent: {{info[1].metadata['ContrastBolusAgent']}}</li>
+																<li>Body Part Examined: {{info[1].metadata['BodyPartExamined']}}</li>
+																<li>Scan Options: {{info[1].metadata['ScanOptions']}}</li>
+																<li>Slice Thickness: {{info[1].metadata['SliceThickness']}}</li>
+																<li>Patient Position: {{info[1].metadata['PatientPosition']}}</li>
+																<li>Performed Procedure Step Start Date: {{info[1].metadata['PerformedProcedureStepStartDate']}}</li>
+															</ul>
+														</td>
+													</tr>
+												</tr>											
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<!--Scripts-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="fullPage/jquery.fullPage.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#fullpage').fullpage();
+			});
+		</script>
+	</body>
+</html>
