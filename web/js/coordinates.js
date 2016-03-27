@@ -1,0 +1,50 @@
+function initDraw(canvas){
+	var mouse = {
+		x: 0,
+		y: 0,
+		startX: 0,
+		startY: 0
+	};
+
+	function setMousePosition(e){
+		var ev = e || window.event;
+		if(ev.pageX){
+			mouse.x = ev.pageX + window.pageXOffset;
+			mouse.y = ev.pageY + window.pageYOffset;
+		} else if (ev.clientX){
+			mouse.x = ev.clientX + document.body.scrollLeft;
+			mouse.y = ev.clientY + document.body.scrollTop;
+		}
+	};
+
+	var element = null;
+
+	canvas.onmousemove = function(e){
+		setMousePosition(e);
+		if(element !== null){
+			element.style.width = Math.abs(mouse.x - mouse.startX) + "px";	
+			element.style.height = Math.abs(mouse.y - mouse.starty) + "px";	
+			element.style.left = (mouse.x - mouse.startX < 0) ? mouse.x + "px" : mouse.startX + "px";
+			element.style.top = (mouse.y - mouse.startY < 0) ? mouse.y + "px" : mouse.StartY + "px";
+		}
+	
+	};
+	
+	canvas.onclick = function(e){
+		if(element !== null){
+			element = null;
+			canvas.style.cursor = "default";
+			console.log("finished");
+		}else{
+			console.log("begin");
+			mouse.startX = mouse.x;
+			mouse.startY = mouse.y;
+			element = document.createElement("div");
+			element.className = "rectangle";
+			element.style.left = mouse.x + "px";
+			element.style.top = mouse.y + "px";
+			canvas.appendChild(element);
+			canvas.style.cursor = "crosshair";
+		}
+	};
+}
