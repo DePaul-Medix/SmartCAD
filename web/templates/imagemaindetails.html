@@ -4,20 +4,28 @@
 		<title>SMARTCAD</title>
 		<style>
 			#canvas {
-				width: 2000px;
-				height: 2000px;
+				width: 400px;
+				height: 600px;
 				border: 10px solid transparent;
 			}
 			.rectangle{
 				border: 1px solid #FF0000;
 				position: absolute;
 			}
+			#nodule{
+				position: center;
+				width: 400px;
+				height: 600px;
+			}
 		</style>
 	</head>
 	<body>
-		<div id="canvas"></div>
-		<script scr="../js/coordinates.js"></script>
-		<script>	
+		<input type="button" value="undo" onclick="undo()"></input>
+		<div id="canvas">
+			<img id="nodule" src="http://www.imagingpathways.health.wa.gov.au/images/pnodule/har.jpg"/>
+		</div>
+		<script>
+			var actions = [];	
 			function initDraw(canvas){
 				var mouse = {
 					x: 0,
@@ -43,18 +51,30 @@
 					setMousePosition(e);
 					if(element !== null){
 						element.style.width = Math.abs(mouse.x - mouse.startX) + "px";	
-						element.style.height = Math.abs(mouse.y - mouse.starty) + "px";	
-						element.style.left = (mouse.x - mouse.startX < 0) ? mouse.x + "px" : mouse.startX + "px";
-						element.style.top = (mouse.y - mouse.startY < 0) ? mouse.y + "px" : mouse.StartY + "px";
+						element.style.height = Math.abs(mouse.y - mouse.startY) + "px";	
+						element.style.left = (mouse.x - mouse.startX < 0) ? mouse.x + "px" : 							mouse.startX + "px";
+						element.style.top = (mouse.y - mouse.startY < 0) ? mouse.y + "px" : 							mouse.startY + "px";
 					}
 				
 				};
 				
 				canvas.onclick = function(e){
 					if(element !== null){
+						var x = mouse.startX;
+						var y = mouse.startY;
+						var w = parseInt(element.style.width.split("p")[0]);
+						var h = parseInt(element.style.height.split("p")[0]);
+						console.log(
+							"Height: " + h + " Width: " + w + "\n" + 
+							"Top Left: (" + x + ", " + y + ")\n" + 
+							"Top Right: (" + (x + w) + ", " + y + ")\n" + 
+							"Bottom Left: (" + x + ", " + (y + h) + ")\n" + 
+							"Bottom Right: (" + (x + w) + ", " + (y + h) + ")"
+						);
 						element = null;
 						canvas.style.cursor = "default";
 						console.log("finished");
+						console.log(actions.length);
 					}else{
 						console.log("begin");
 						mouse.startX = mouse.x;
@@ -64,11 +84,19 @@
 						element.style.left = mouse.x + "px";
 						element.style.top = mouse.y + "px";
 						canvas.appendChild(element);
+						actions.push(element);
 						canvas.style.cursor = "crosshair";
 					}
 				};
 			};
-			
+
+			function undo(){
+				console.log(actions.length);
+				var last = document.getElementById("canvas").lastChild;
+				document.getElementById("canvas").removeChild(last);
+				actions.pop();
+				console.log(actions.length);
+			};	
 			initDraw(document.getElementById("canvas"));
 		</script>
 	</body>
